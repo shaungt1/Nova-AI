@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import AIAssistant from "./AIAssistant";
+import AIAssistantApp from "./AIAssistantApp";
 // import AIChatPage from './ai-chat-page';
 import React, { Suspense } from "react";
 import { TranscriptProvider } from "@/app/contexts/TranscriptContext";
@@ -17,7 +17,7 @@ export default function Chat() {
         <Suspense fallback={<div>Loading...</div>}>
         <TranscriptProvider>
             <EventProvider>
-            <AIAssistant />
+            <AIAssistantApp />
             </EventProvider>
         </TranscriptProvider>
         </Suspense>

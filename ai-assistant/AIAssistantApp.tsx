@@ -6,18 +6,18 @@ import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 
 // UI components
-// UI components
 import Transcript from "../components/AIAssistantModels/Transcript";
 import Events from "../components/AIAssistantModels/Events";
 import BottomToolbar from "../components/AIAssistantModels/BottomToolbar";
 
 // Types
-import { SessionStatus } from "../types";
-import type { RealtimeAgent } from "@openai/agents/realtime";
+import { SessionStatus } from "@/app/types";
+import type { RealtimeAgent } from '@openai/agents/realtime';
 
 // Context providers & hooks
 import { useTranscript } from "@/app/contexts/TranscriptContext";
 import { useEvent } from "@/app/contexts/EventContext";
+import { useRealtimeSession } from "../hooks/useRealtimeSession";
 import { createModerationGuardrail } from "@/app/agentConfigs/guardrails";
 
 // Agent configs
@@ -35,11 +35,9 @@ const sdkScenarioMap: Record<string, RealtimeAgent[]> = {
   chatSupervisor: chatSupervisorScenario,
 };
 
-import useAudioDownload from "./../hooks/useAudioDownload";
-import { useHandleSessionHistory } from "./../hooks/useHandleSessionHistory";
-import { useRealtimeSession } from "../hooks/useRealtimeSession";
-
-function AIAssistant() {
+import useAudioDownload from "../hooks/useAudioDownload";
+import { useHandleSessionHistory } from "../hooks/useHandleSessionHistory";
+function AIAssistantApp() {
   const searchParams = useSearchParams()!;
 
   // ---------------------------------------------------------------------
@@ -441,13 +439,13 @@ function AIAssistant() {
           onClick={() => window.location.reload()}
         >
           <div>
-            {/* <Image
+            <Image
               src="/openai-logomark.svg"
               alt="OpenAI Logo"
               width={20}
               height={20}
               className="mr-2"
-            /> */}
+            />
           </div>
           <div>
             Realtime API <span className="text-gray-500">Agents</span>
@@ -549,4 +547,4 @@ function AIAssistant() {
   );
 }
 
-export default AIAssistant;
+export default AIAssistantApp;
