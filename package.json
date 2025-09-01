@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 3022",
-    "build": "next build --turbopack ", 
+    "build": "next build --turbopack ",
     "start": "next start"
   },
   "dependencies": {
@@ -119,6 +119,7 @@
     "react-quill": "^2.0.0",
     "react-resizable-panels": "^3.0.5",
     "recharts": "^2.15.4",
+    "simplex-noise": "^4.0.3",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "uuid": "^11.1.0",
