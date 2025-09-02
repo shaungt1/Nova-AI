@@ -1,11 +1,12 @@
 import { useCallback, useRef, useState, useEffect } from 'react';
+
 import {
   RealtimeSession,
   RealtimeAgent,
   OpenAIRealtimeWebRTC,
 } from '@openai/agents/realtime';
 
-import { audioFormatForCodec, applyCodecPreferences } from '../../lib/codecUtils';
+import { audioFormatForCodec, applyCodecPreferences } from '../lib/codecUtils';
 import { useEvent } from '../contexts/EventContext';
 import { useHandleSessionHistory } from './useHandleSessionHistory';
 import { SessionStatus } from '../types';

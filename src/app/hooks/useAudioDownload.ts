@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { convertWebMBlobToWav } from "../../lib/audioUtils";
+import { convertWebMBlobToWav } from "../lib/audioUtils";
 
 function useAudioDownload() {
   // Ref to store the MediaRecorder instance.
